@@ -31,8 +31,19 @@
                 for(let i=0; i<spamtimes; i++){
                     $('#p-spam').append("<input type='text'>");
                 }
-            }
-            )
+            })
+            $('#btn-fadein').on('click', function(){
+                $('#col-fade').fadeIn();
+            })
+            $('#btn-fadeout').on('click', function(){
+                $('#col-fade').fadeOut();
+            })
+            $('#btn-before').on('click', function(){
+                $('#p-before').before("<p>Hello!</p>");
+            })
+            $('#btn-after').on('click', function(){
+                $('#p-before').after("<p>Is it me you're looking for?</p>");
+            })
         });
     </script>
 </head>
@@ -91,6 +102,32 @@
             <div class="col pt-3">
                 <h1>Spamming</h1>
                 <p id="p-spam">Click the button to spam as many input boxes as you want</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row"> <!--Fade In/Out-->
+            <div class="col-3 text-center p-5">
+                <button id="btn-fadein">Fade In!</button>
+            </div>
+            <div class="col-3 text-center p-5">
+                <button id="btn-fadeout">Fade Out!</button>
+            </div>
+            <div id="col-fade" class="col pt-3">
+                <h1>Fade it!</h1>
+                <p>Click the buttons to fade the col</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row"> <!--before/after-->
+            <div class="col-3 text-center p-5">
+                <button id="btn-before">Something before!</button>
+            </div>
+            <div class="col-3 text-center p-5">
+                <button id="btn-after">Something after!</button>
+            </div>
+            <div class="col pt-3">
+                <h1>And more tests</h1>
+                <p id="p-before">Click the buttons to...</p>
             </div>
         </div>
     </div>
