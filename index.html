@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Funciones con JQuery</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function(){
+            $('#btn-rojo').on('click', function(){
+                $('#p-rojo').toggleClass("text-danger");
+            })
+            $('#btn-slide').on('click', function(){
+                $('#col-slide').slideToggle(250);
+            })
+            $('#btn-append').on('click', function(){
+                $('#p-append').append("<br>Do you see the new line?");
+            })
+            $('#btn-reset').on('click', function(){
+                $('#p-append').html("Finally you stop appending");
+            })
+            $('#input-text').on('keyup',function(){
+                let messagetext = $("#input-text").val()
+                $('#p-input-text').html("will be shown here: <br>" + messagetext);
+            })
+            $('#btn-spam').on('click', function(){
+                let spamtimes = $("#input-spam").val()
+                for(let i=0; i<spamtimes; i++){
+                    $('#p-spam').append("<input type='text'>");
+                }
+            }
+            )
+        });
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col-6 text-center p-5">
+                <button id="btn-rojo">Toggle Class!</button>
+            </div>
+            <div class="col-6 pt-3">
+                <h1>Toggle Class</h1>
+                <p id="p-rojo">Click the button to toggle class "red" to this paragraph</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-6 text-center p-5">
+                <button id="btn-slide">SlideToggle!</button>
+            </div>
+            <div id="col-slide" class="col-6 pt-3">
+                <h1>Slidetoggle</h1>
+                <p>Click the button to slide the col</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-3 text-center p-5">
+                <button id="btn-append">Append!</button>
+            </div>
+            <div class="col-3 text-center p-5">
+                <button id="btn-reset">Reset paragraph</button>
+            </div>
+            <div class="col-6 pt-3">
+                <h1>Append</h1>
+                <p id="p-append">Click the button to append a new paragraph</p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-6 text-center p-5">
+                <input type="text" id="input-text">
+            </div>
+            <div class="col-6 pt-3">
+                <h1>Your text</h1>
+                <p id="p-input-text"></p>
+            </div>
+        </div>
+        <hr>
+        <div class="row">
+            <div class="col-3 text-center p-3 m-2">
+                <input id="input-spam">
+            </div>
+            <div class="col-3 text-center p-3 m-2">
+                <button id="btn-spam">Spam Time!</button>
+            </div>
+            <div class="col pt-3">
+                <h1>Spamming</h1>
+                <p id="p-spam">Click the button to spam as many input boxes as you want</p>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
